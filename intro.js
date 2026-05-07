@@ -135,6 +135,18 @@ console.log(3 !== "3")
 
 //Or Operator ||
 
+// Ternary Operator
+function checkEquality(a,b) {
+    return a===b ? "Its Equal" : "Its Not Equal";
+}
+console.log(checkEquality(1,2))
+
+//Multiple Ternary Operators
+function checkSign(num) {
+    return num > 0 ? "postive" : num < 0 ? "negative" : "zero"
+}
+console.log(checkSign(3))
+
 //7. Objects
 
 var myObj = {
@@ -169,3 +181,52 @@ while (j < 6) {
     console.log(j);
     j += 2
 }
+
+// Random cool function
+function convertToInt(str) {
+    return parseInt(str,3)
+}
+
+console.log(convertToInt("021"))
+
+//9. Let vs Var vs Const
+
+// var
+// var can be re declared
+// var is function scoped (meaning it persists through the entire code if declared global or it persists the entire function if declred in the function)
+
+// let
+// let cannot be re declared, only re assigned
+// let is block scoped (meaning it persists only in the block e.g. if its declared in a "if" statement inside a function it only persists inside "if" not in entire function)
+
+// const
+// const has same behavior as let plus its read only
+// const can never be re declared or re assigned
+// The only exception is you can mutate an array or object that is declared as const
+
+// Freeze Object
+
+
+const MATH_CONSTANTS = {
+    "PI": 3.14
+}
+Object.freeze(MATH_CONSTANTS)
+
+try {
+    MATH_CONSTANTS["PI"] = 99;
+    console.log(MATH_CONSTANTS["PI"])
+}
+catch(er) {
+    console.log("error: " + er);
+}
+
+
+// 10. Functions
+
+// Arrow function
+
+var magic = function() {
+    return new Date()
+}
+
+console.log(magic)
